@@ -8,7 +8,7 @@
 import Foundation
 
 enum SearchResultItemType: Int {
-    case movies, people
+    case movies, people, shows
 }
 
 struct SearchResultItem {
@@ -34,5 +34,13 @@ extension SearchResultItem {
         self.subtitle = person.knownForTitles?.first ?? " "
         self.imageUrl = person.profileUrl.flatMap { "http://image.tmdb.org/t/p/w185/"  + $0 }
         self.type = .people
+    }
+    
+    init(show: Show) {
+        self.id = show.id
+        self.title = show.name
+        self.subtitle = show.releaseDate
+        self.imageUrl = show.posterUrl.flatMap { "http://image.tmdb.org/t/p/w185/"  + $0 }
+        self.type = .shows
     }
 }

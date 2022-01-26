@@ -64,11 +64,12 @@ extension CarouselItemViewModel {
         self.title = person.name
         self.subtitle = person.knownForTitles?.first ?? " "
         self.imageUrl = person.profileUrl.flatMap { "http://image.tmdb.org/t/p/w185/" + $0 }
+//        print(imageUrl)
     }
     
     init(show: Show) {
         self.title = show.name
         self.subtitle = show.releaseDate
-        self.imageUrl = "http://image.tmdb.org/t/p/w185/" + show.posterUrl
+        self.imageUrl = show.posterUrl.flatMap {"http://image.tmdb.org/t/p/w185/" + $0}
     }
 }

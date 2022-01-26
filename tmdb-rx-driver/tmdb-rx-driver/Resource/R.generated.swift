@@ -114,12 +114,14 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.image` struct is generated, and contains static references to 5 images.
+  /// This `R.image` struct is generated, and contains static references to 6 images.
   struct image {
     /// Image `aquaman`.
     static let aquaman = Rswift.ImageResource(bundle: R.hostingBundle, name: "aquaman")
     /// Image `back_arrow`.
     static let back_arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "back_arrow")
+    /// Image `placeholder`.
+    static let placeholder = Rswift.ImageResource(bundle: R.hostingBundle, name: "placeholder")
     /// Image `sample`.
     static let sample = Rswift.ImageResource(bundle: R.hostingBundle, name: "sample")
     /// Image `search_icon`.
@@ -138,6 +140,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "back_arrow", bundle: ..., traitCollection: ...)`
     static func back_arrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.back_arrow, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "placeholder", bundle: ..., traitCollection: ...)`
+    static func placeholder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.placeholder, compatibleWith: traitCollection)
     }
     #endif
 
@@ -424,7 +433,9 @@ struct _R: Rswift.Validatable {
       let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
       let movieDetailViewController = StoryboardViewControllerResource<MovieDetailViewController>(identifier: "MovieDetailViewController")
       let name = "Main"
+      let personDetailViewController = StoryboardViewControllerResource<PersonDetailViewController>(identifier: "PersonDetailViewController")
       let searchViewController = StoryboardViewControllerResource<SearchViewController>(identifier: "SearchViewController")
+      let showDetailViewController = StoryboardViewControllerResource<ShowDetailViewController>(identifier: "ShowDetailViewController")
 
       func discoverViewController(_: Void = ()) -> DiscoverViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: discoverViewController)
@@ -438,20 +449,32 @@ struct _R: Rswift.Validatable {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: movieDetailViewController)
       }
 
+      func personDetailViewController(_: Void = ()) -> PersonDetailViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: personDetailViewController)
+      }
+
       func searchViewController(_: Void = ()) -> SearchViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: searchViewController)
       }
 
+      func showDetailViewController(_: Void = ()) -> ShowDetailViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: showDetailViewController)
+      }
+
       static func validate() throws {
         if UIKit.UIImage(named: "aquaman", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'aquaman' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "arrow.left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrow.left' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "back_arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'back_arrow' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "placeholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "search_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'search_icon' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
         if _R.storyboard.main().discoverViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'discoverViewController' could not be loaded from storyboard 'Main' as 'DiscoverViewController'.") }
         if _R.storyboard.main().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Main' as 'LoginViewController'.") }
         if _R.storyboard.main().movieDetailViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'movieDetailViewController' could not be loaded from storyboard 'Main' as 'MovieDetailViewController'.") }
+        if _R.storyboard.main().personDetailViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'personDetailViewController' could not be loaded from storyboard 'Main' as 'PersonDetailViewController'.") }
         if _R.storyboard.main().searchViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'searchViewController' could not be loaded from storyboard 'Main' as 'SearchViewController'.") }
+        if _R.storyboard.main().showDetailViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'showDetailViewController' could not be loaded from storyboard 'Main' as 'ShowDetailViewController'.") }
       }
 
       fileprivate init() {}

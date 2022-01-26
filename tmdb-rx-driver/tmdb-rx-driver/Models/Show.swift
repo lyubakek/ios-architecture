@@ -11,7 +11,7 @@ import Foundation
 struct Show: Decodable {
     let id: Int
     let name: String
-    let posterUrl: String
+    let posterUrl: String?
     let releaseDate: String
     
     enum CodingKeys: String, CodingKey {

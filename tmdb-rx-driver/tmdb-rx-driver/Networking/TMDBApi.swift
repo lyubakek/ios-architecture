@@ -17,11 +17,14 @@ protocol TMDBApiMoviesProvider {
 
 protocol TMDBApiPeopleProvider {
     func fetchPopularPeople() -> Observable<[Person]?>
+    func fetchPersonDetails(forPersonId id: Int) -> Observable<PersonDetailResponse?>
     func searchPeople(forQuery query: String) -> Observable<[Person]?>
 }
 
 protocol TMDBApiShowsProvider {
     func fetchPopularShows() -> Observable<[Show]?>
+    func fetchShowDetails(forShowId id: Int) -> Observable<Show?>
+    func searchShows(forQuery query: String) -> Observable<[Show]?>
 }
 
 protocol TMDBApiAuthProvider {
@@ -85,11 +88,45 @@ final class TMDBApi: TMDBApiProvider {
         }
     }
     
+    func fetchShowDetails(forShowId id: Int) -> Observable<Show?> {
+        return httpClient.get(url: "https://api.themoviedb.org/3/tv/\(id)?api_key=\(Constants.apiKey)&language=en-US)")
+            .map { data -> Show? in
+                guard let data = data,
+                    let response = try? JSONDecoder().decode(Show.self, from: data) else {
+                        return nil
+                }
+                return response
+        }
+    }
+    
+    func fetchPersonDetails(forPersonId id: Int) -> Observable<PersonDetailResponse?> {
+        return httpClient.get(url: "https://api.themoviedb.org/3/person/\(id)?api_key=\(Constants.apiKey)&language=en-US)")
+            .map { data -> PersonDetailResponse? in
+                guard let data = data,
+                    let response = try? JSONDecoder().decode(PersonDetailResponse.self, from: data) else {
+                        return nil
+                }
+                return response
+        }
+    }
+    
     func searchMovies(forQuery query: String) -> Observable<[Movie]?> {
         return httpClient.get(url: "https://api.themoviedb.org/3/search/movie?api_key=\(Constants.apiKey)&language=en-US&query=\(query)&page=1&include_adult=false")
             .map { data -> [Movie]? in
                 guard let data = data,
                     let response = try? JSONDecoder().decode(MoviesResponse.self, from: data) else {
+                        return nil
+                }
+                
+                return response.results
+            }
+    }
+    
+    func searchShows(forQuery query: String) -> Observable<[Show]?> {
+        return httpClient.get(url: "https://api.themoviedb.org/3/search/tv?api_key=\(Constants.apiKey)&language=en-US&query=\(query)&page=1&include_adult=false")
+            .map { data -> [Show]? in
+                guard let data = data,
+                    let response = try? JSONDecoder().decode(ShowsResponse.self, from: data) else {
                         return nil
                 }
                 

@@ -76,6 +76,15 @@
 		1AE109A52517A3AC001E5B01 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE109A42517A3AC001E5B01 /* R.generated.swift */; };
 		1AE109A72517A461001E5B01 /* SearchStateBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE109A62517A461001E5B01 /* SearchStateBinder.swift */; };
 		1AE109A92517C026001E5B01 /* SearchActionBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE109A82517C026001E5B01 /* SearchActionBinder.swift */; };
+		9D96380127A084EB0014C5E2 /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96380027A084EA0014C5E2 /* PersonDetailViewController.swift */; };
+		9D96380527A085230014C5E2 /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96380427A085230014C5E2 /* ShowDetailViewController.swift */; };
+		9D96380827A088590014C5E2 /* PersonDetailStateBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96380727A088590014C5E2 /* PersonDetailStateBinder.swift */; };
+		9D96380B27A088ED0014C5E2 /* PersonDetailDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96380A27A088ED0014C5E2 /* PersonDetailDriver.swift */; };
+		9D96381127A08BEE0014C5E2 /* PersonDetailActionBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96381027A08BEE0014C5E2 /* PersonDetailActionBinder.swift */; };
+		9D96381427A08E720014C5E2 /* ShowDetailStateBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96381327A08E720014C5E2 /* ShowDetailStateBinder.swift */; };
+		9D96381727A08E850014C5E2 /* ShowDetailDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96381627A08E850014C5E2 /* ShowDetailDriver.swift */; };
+		9D96381A27A08E9A0014C5E2 /* ShowDetailActionBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96381927A08E9A0014C5E2 /* ShowDetailActionBinder.swift */; };
+		9D96383427A1F88E0014C5E2 /* PersonDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96383327A1F88C0014C5E2 /* PersonDetailResponse.swift */; };
 		CE8D6EC627327C1DFC949704 /* Pods_tmdb_rx_driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973976C40C7DC73287C8EF44 /* Pods_tmdb_rx_driver.framework */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +162,15 @@
 		1AE109A82517C026001E5B01 /* SearchActionBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchActionBinder.swift; sourceTree = "<group>"; };
 		41160404C5F5FF90CD712B13 /* Pods-tmdb-rx-driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdb-rx-driver.release.xcconfig"; path = "Target Support Files/Pods-tmdb-rx-driver/Pods-tmdb-rx-driver.release.xcconfig"; sourceTree = "<group>"; };
 		973976C40C7DC73287C8EF44 /* Pods_tmdb_rx_driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tmdb_rx_driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D96380027A084EA0014C5E2 /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
+		9D96380427A085230014C5E2 /* ShowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
+		9D96380727A088590014C5E2 /* PersonDetailStateBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailStateBinder.swift; sourceTree = "<group>"; };
+		9D96380A27A088ED0014C5E2 /* PersonDetailDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailDriver.swift; sourceTree = "<group>"; };
+		9D96381027A08BEE0014C5E2 /* PersonDetailActionBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailActionBinder.swift; sourceTree = "<group>"; };
+		9D96381327A08E720014C5E2 /* ShowDetailStateBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailStateBinder.swift; sourceTree = "<group>"; };
+		9D96381627A08E850014C5E2 /* ShowDetailDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailDriver.swift; sourceTree = "<group>"; };
+		9D96381927A08E9A0014C5E2 /* ShowDetailActionBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailActionBinder.swift; sourceTree = "<group>"; };
+		9D96383327A1F88C0014C5E2 /* PersonDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailResponse.swift; sourceTree = "<group>"; };
 		AF7C2B4A13E312E1FD20CF55 /* Pods-tmdb-rx-driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmdb-rx-driver.debug.xcconfig"; path = "Target Support Files/Pods-tmdb-rx-driver/Pods-tmdb-rx-driver.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,6 +227,7 @@
 				1AE0177D25175EF50019F8FA /* Genre.swift */,
 				1AE0177E25175EF50019F8FA /* Person.swift */,
 				1AE0177F25175EF50019F8FA /* Show.swift */,
+				9D96383327A1F88C0014C5E2 /* PersonDetailResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +268,8 @@
 		1AE01798251760900019F8FA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9D9637FF27A084AC0014C5E2 /* ShowDetail */,
+				9D9637FE27A084950014C5E2 /* PeopleDetail */,
 				1AE01799251760900019F8FA /* Discover */,
 				1AE017A4251760900019F8FA /* Search */,
 				1AE017AB251760900019F8FA /* MovieDetail */,
@@ -416,6 +437,28 @@
 			path = "tmdb-rx-driver/Resource";
 			sourceTree = SOURCE_ROOT;
 		};
+		9D9637FE27A084950014C5E2 /* PeopleDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9D96380027A084EA0014C5E2 /* PersonDetailViewController.swift */,
+				9D96380727A088590014C5E2 /* PersonDetailStateBinder.swift */,
+				9D96380A27A088ED0014C5E2 /* PersonDetailDriver.swift */,
+				9D96381027A08BEE0014C5E2 /* PersonDetailActionBinder.swift */,
+			);
+			path = PeopleDetail;
+			sourceTree = "<group>";
+		};
+		9D9637FF27A084AC0014C5E2 /* ShowDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9D96380427A085230014C5E2 /* ShowDetailViewController.swift */,
+				9D96381327A08E720014C5E2 /* ShowDetailStateBinder.swift */,
+				9D96381627A08E850014C5E2 /* ShowDetailDriver.swift */,
+				9D96381927A08E9A0014C5E2 /* ShowDetailActionBinder.swift */,
+			);
+			path = ShowDetail;
+			sourceTree = "<group>";
+		};
 		B13475FE0AB43ADE61034608 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +622,8 @@
 				1AE0178225175EF50019F8FA /* Person.swift in Sources */,
 				1AE1095D25176731001E5B01 /* Params.swift in Sources */,
 				1AE0178825175F280019F8FA /* TMDBApi.swift in Sources */,
+				9D96380527A085230014C5E2 /* ShowDetailViewController.swift in Sources */,
+				9D96381727A08E850014C5E2 /* ShowDetailDriver.swift in Sources */,
 				1AE0179025175F490019F8FA /* UIStoryboard+ViewControllers.swift in Sources */,
 				1AE0179125175F490019F8FA /* ActivityIndicator.swift in Sources */,
 				1AE017BA251760900019F8FA /* DiscoverViewController.swift in Sources */,
@@ -588,6 +633,7 @@
 				1AE0178025175EF50019F8FA /* Movie.swift in Sources */,
 				1AE109A72517A461001E5B01 /* SearchStateBinder.swift in Sources */,
 				1AE017CD251760900019F8FA /* MovieDetailTipsView.swift in Sources */,
+				9D96383427A1F88E0014C5E2 /* PersonDetailResponse.swift in Sources */,
 				1AE1096725177FA4001E5B01 /* ViewControllerBinder.swift in Sources */,
 				1AE1095225176720001E5B01 /* Unown.swift in Sources */,
 				1AE017BD251760900019F8FA /* DiscoverMainView.swift in Sources */,
@@ -595,6 +641,7 @@
 				1AE1096E2517809F001E5B01 /* DisposeViewController.swift in Sources */,
 				1AE017C1251760900019F8FA /* CarouselSectionCell.swift in Sources */,
 				1AE109432517671A001E5B01 /* Next.swift in Sources */,
+				9D96380B27A088ED0014C5E2 /* PersonDetailDriver.swift in Sources */,
 				1A8CB9B62519DC7600F25598 /* MovieDetailActionBinder.swift in Sources */,
 				1AE1095425176720001E5B01 /* RawClosure.swift in Sources */,
 				1AE0178925175F280019F8FA /* HTTPClient.swift in Sources */,
@@ -606,17 +653,22 @@
 				1AE0178325175EF50019F8FA /* Show.swift in Sources */,
 				1AE017CF251760900019F8FA /* LoginDriver.swift in Sources */,
 				1AE109492517671A001E5B01 /* NSObject+Disposable.swift in Sources */,
+				9D96380127A084EB0014C5E2 /* PersonDetailViewController.swift in Sources */,
 				1AE017C2251760900019F8FA /* SearchViewController.swift in Sources */,
 				1AE1095C25176731001E5B01 /* Log.swift in Sources */,
 				1A8CB9B42519DC6800F25598 /* MovieDetailStateBinder.swift in Sources */,
 				1AE109482517671A001E5B01 /* Latest.swift in Sources */,
 				1AE1095B25176731001E5B01 /* Logging.swift in Sources */,
+				9D96381127A08BEE0014C5E2 /* PersonDetailActionBinder.swift in Sources */,
 				1AE1096125176854001E5B01 /* DefaultInitializable.swift in Sources */,
 				1AE017D1251760900019F8FA /* LoginViewController.swift in Sources */,
+				9D96381A27A08E9A0014C5E2 /* ShowDetailActionBinder.swift in Sources */,
 				1AE017CA251760900019F8FA /* GradientImageView.swift in Sources */,
 				1AE109A92517C026001E5B01 /* SearchActionBinder.swift in Sources */,
+				9D96380827A088590014C5E2 /* PersonDetailStateBinder.swift in Sources */,
 				1AE017BE251760900019F8FA /* MovieCell.swift in Sources */,
 				1AE1095325176720001E5B01 /* Closure.swift in Sources */,
+				9D96381427A08E720014C5E2 /* ShowDetailStateBinder.swift in Sources */,
 				1AE017DA251761610019F8FA /* App.swift in Sources */,
 				1AE109A52517A3AC001E5B01 /* R.generated.swift in Sources */,
 				1AE0178125175EF50019F8FA /* Genre.swift in Sources */,
@@ -771,7 +823,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "tmdb-rx-driver/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -790,7 +842,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "tmdb-rx-driver/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

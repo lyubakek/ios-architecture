@@ -37,7 +37,15 @@ extension SearchViewController: StaticFactory {
         }
         
         private static func detailViewControllerFactory(_ item: SearchResultItem) -> UIViewController {
-            MovieDetailViewController.Factory.default(id: item.id)
+
+            switch item.type {
+            case .movies:
+                return MovieDetailViewController.Factory.default(id: item.id)
+            case .people:
+                return PersonDetailViewController.Factory.default(id: item.id)
+            case .shows:
+                return ShowDetailViewController.Factory.default(id: item.id)
+            }
         }
     }
 }

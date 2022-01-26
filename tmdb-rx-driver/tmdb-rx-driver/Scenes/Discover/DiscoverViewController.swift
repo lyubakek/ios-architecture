@@ -36,8 +36,11 @@ extension DiscoverViewController: StaticFactory {
             switch selection.item {
             case .movie:
                 return MovieDetailViewController.Factory.default(id: selection.index)
-            case .person, .show:
-                return nil
+            case .person:
+                return PersonDetailViewController.Factory.default(id: selection.index)
+            case .show:
+                return
+                    ShowDetailViewController.Factory.default(id: selection.index)
             }
         }
     }

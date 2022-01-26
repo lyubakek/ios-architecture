@@ -29,7 +29,7 @@ final class SearchActionBinder: ViewControllerBinder {
                 
         viewController.bag.insert(
             query
-                .bind(onNext: driver.search),
+                .subscribe(onNext: driver.search(_:), onError: nil),
             didSelectedCategory
                 .bind(onNext: driver.selectCategory),
             didSelectItem

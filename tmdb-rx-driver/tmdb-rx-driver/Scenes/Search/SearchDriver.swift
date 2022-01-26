@@ -66,6 +66,11 @@ final class SearchDriver: SearchDriving {
             searchResult = api.searchPeople(forQuery: query)
                 .map({ $0 ?? [] })
                 .mapMany(SearchResultItem.init)
+            
+        case .shows:
+            searchResult = api.searchShows(forQuery: query)
+                .map({ $0 ?? []})
+                .mapMany(SearchResultItem.init)
         }
         
         searchResult
