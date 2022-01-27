@@ -21,7 +21,7 @@ final class LoginStateBinder: ViewControllerBinder {
     
     func bindLoaded() {
         viewController.statusBarStyle = .lightContent
-        
+        viewController.isModalInPresentation = true
         viewController.bag.insert(
             viewController.rx.viewWillAppear
                 .bind(onNext: unowned(self, in: LoginStateBinder.viewWillAppear)),

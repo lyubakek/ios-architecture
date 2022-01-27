@@ -53,9 +53,11 @@ final class DiscoverDriver: DiscoverDriving {
             guard let id = results?.movie?[index].id else { return }
             didSelectRelay.accept((.movie, id))
         case 1:
-            didSelectRelay.accept((.person, 0))
+            guard let id = results?.person?[index].id else { return }
+            didSelectRelay.accept((.person, id))
         case 2:
-            didSelectRelay.accept((.show, 0))
+            guard let id = results?.show?[index].id else { return }
+            didSelectRelay.accept((.show, id))
         default:
             break
         }

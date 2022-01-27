@@ -463,6 +463,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if UIKit.UIImage(named: "aquaman", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'aquaman' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "arrow.backward", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrow.backward' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "arrow.left", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrow.left' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "back_arrow", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'back_arrow' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "placeholder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'placeholder' is used in storyboard 'Main', but couldn't be loaded.") }

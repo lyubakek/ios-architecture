@@ -19,7 +19,7 @@ struct Person: Decodable {
     let knownForTitles: [String]?
     
     enum CodingKeys: String, CodingKey {
-        case id, name, profileUrl = "profile_path", knownFor = "known_for", knownAs = "also_known_as"
+        case id, name, profileUrl = "profile_path", knownFor = "known_for"
     }
     
     enum KnownForKeys: String, CodingKey {
@@ -31,10 +31,7 @@ struct Person: Decodable {
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
         profileUrl = try? container.decode(String.self, forKey: .profileUrl)
-        guard var known = (try? container.nestedUnkeyedContainer(forKey: .knownFor)) ?? (try? container.nestedUnkeyedContainer(forKey: .knownAs)) else { knownForTitles = nil
-            return
-        }
-        
+        var known = try container.nestedUnkeyedContainer(forKey: .knownFor)
         var titles: [String]? = []
         while !known.isAtEnd {
             if let knownForDecodable = try? known.decode(KnownFor.self),
